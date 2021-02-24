@@ -749,6 +749,7 @@ textarea {
     cursor: pointer;
     transition: background-color .4s;
     transition: transform .4s;
+    outline: none;
 }
 
 .submit-btn:hover {

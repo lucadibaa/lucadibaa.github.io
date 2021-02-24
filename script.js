@@ -182,7 +182,7 @@ function displayButtons() {
             values.push(item.category)
         }
         return values
-    }, ['all'])
+    }, ['All'])
     console.log(categories)
     const categoryBtns = categories.map(function(category) {
         return `<button class="filter-btn" type="button" data-id="${category}">${category}</button>`
