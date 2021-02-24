@@ -200,7 +200,7 @@ function displayButtons() {
                     return item
                 }
             })
-            if ( category === 'all' ) {
+            if ( category === 'All' ) {
                 displayProjects(projects)
             } else {
                 displayProjects(projectsCategory)

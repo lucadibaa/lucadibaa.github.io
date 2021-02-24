@@ -369,6 +369,7 @@ section .container {
 .filter-btns {
     margin-bottom: 2rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -386,6 +387,7 @@ section .container {
     transition: background .3s ease-in-out;
     outline: none;
     border: 2px solid var(--main-color-dark);
+    margin-bottom: 8px;
 }
 
   .filter-btn:hover {
@@ -846,6 +848,12 @@ textarea {
     }
     .project-btn-code {
         bottom: 35%;
+    }
+}
+
+@media screen and (max-width: 777px) {
+    .projects .container .bg-text {
+        margin-bottom: -2rem;
     }
 }
 
