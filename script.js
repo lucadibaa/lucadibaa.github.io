@@ -1,10 +1,10 @@
 // Show menu
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+        nav = document.getElementById(navId)
 
-    if(toggle && nav) {
-        toggle.addEventListener('click', ()=> {
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
             nav.classList.toggle('show-menu')
         });
     }
@@ -23,7 +23,7 @@ navlink.forEach(n => n.addEventListener('click', linkAction))
 // Change Header Background
 function scrollHeader() {
     const header = document.getElementById('header')
-    if(this.scrollY >= 200) {
+    if (this.scrollY >= 200) {
         header.classList.add('scroll-header');
     } else {
         header.classList.remove('scroll-header')
@@ -32,25 +32,25 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader)
 
 // GSAP Animation
-gsap.from('.home-img', {opacity: 0, duration: 2, delay: .5, x: 60})
-gsap.from('.home-data', {opacity: 0, duration: 2, delay: .8, y: 25})
-gsap.from('.home-greeting, .home-name, .home-profession', {opacity: 0, duration: 2, delay: 1, y: 25, ease: 'expo.out', stagger: .2})
-gsap.from('.nav-logo, .nav-toggle', {opacity: 0, duration: 2, delay: 1.4, y: 25, ease: 'expo.out', stagger: .2})
-gsap.from('.nav-item', {opacity: 0, duration: 2, delay: 1.7, y: 25, ease: 'expo.out', stagger: .2})
-gsap.from('.home-social-icon', {opacity: 0, duration: 2.3, delay: 2, y: 25, ease: 'expo.out', stagger: .2})
+gsap.from('.home-img', { opacity: 0, duration: 2, delay: .5, x: 60 })
+gsap.from('.home-data', { opacity: 0, duration: 2, delay: .8, y: 25 })
+gsap.from('.home-greeting, .home-name, .home-profession', { opacity: 0, duration: 2, delay: 1, y: 25, ease: 'expo.out', stagger: .2 })
+gsap.from('.nav-logo, .nav-toggle', { opacity: 0, duration: 2, delay: 1.4, y: 25, ease: 'expo.out', stagger: .2 })
+gsap.from('.nav-item', { opacity: 0, duration: 2, delay: 1.7, y: 25, ease: 'expo.out', stagger: .2 })
+gsap.from('.home-social-icon', { opacity: 0, duration: 2.3, delay: 2, y: 25, ease: 'expo.out', stagger: .2 })
 
 
 // Skills jQuery Animation
-$('.skill-per').each(function() {
+$('.skill-per').each(function () {
     var $this = $(this);
     var per = $this.attr('per');
     $this.css("width", per + '%');
-    $({animatedValue: 0}).animate({animatedValue: per}, {
+    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
         duration: 1500,
-        step: function() {
+        step: function () {
             $this.attr('per', Math.floor(this.animatedValue) + '%');
         },
-        complete: function() {
+        complete: function () {
             $this.attr('per', Math.floor(this.animatedValue) + '%');
         },
     });
@@ -59,13 +59,13 @@ $('.skill-per').each(function() {
 // projects object
 const projects = [
     {
-      id: 1,
-      title: "Band Website",
-      subtitle: "website",
-      category: 'Websites',
-      img: "./images/nonoise-preview.jpg",
-      link: 'https://nonoise-project.netlify.app',
-      desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, facere. Nam nulla facere consequuntur a illum unde consequatur est dolore, iure, nesciunt suscipit sit, placeat quisquam eaque doloremque dignissimos adipisci!`,
+        id: 1,
+        title: "Band Website",
+        subtitle: "website",
+        category: 'Websites',
+        img: "./images/nonoise-preview.jpg",
+        link: 'https://nonoise-project.netlify.app',
+        desc: `Ho creato questo sito agli inizi per una band di miei amici, nel tempo l'ho un po' aggiornato ma poi è rimasto inconcluso a causa di mancanza di materiali.`,
     },
     {
         id: 2,
@@ -137,7 +137,25 @@ const projects = [
         category: 'JS Games',
         img: "./images/blackjack-preview.jpg",
         link: 'https://lucadibaa-blackjack-project.netlify.app',
-        desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, facere. Nam nulla facere consequuntur a illum unde consequatur est dolore, iure, nesciunt suscipit sit, placeat quisquam eaque doloremque dignissimos adipisci!`,
+        desc: `Blackjack l'ho creato seguendo un tutorial mentre stavo imparando javascript, successivamente l'ho modificato e personalizzato.`,
+    },
+    {
+        id: 10,
+        title: "Airbnb Clone",
+        subtitle: "react website",
+        category: 'React Websites',
+        img: "./images/airbnb-preview.jpg",
+        link: 'https://lucadibaa-airbnb-clone-71f43.web.app/',
+        desc: `Sviluppato su due pagine, una è la homepage e l'altra è una lista di potenziali stanze dove alloggiare, ho utilizzato react-router per la paginazione.`,
+    },
+    {
+        id: 11,
+        title: "LinkedIn Clone",
+        subtitle: "react website",
+        category: 'React Websites',
+        img: "./images/linkedin-preview.jpg",
+        link: 'https://lucadibaa-linkedin-clo.web.app/',
+        desc: `Sviluppato utilizzando firebase per lo storage dei post e degli account registrati, redux per spostare i dati tra i diversi componenti. Si può suddividere in due "blocchi", uno comprende il login e la registrazione e l'altro comprende il pubblicare post visibili a tutti in tempo reale.`,
     },
 ];
 projectsContainer = document.querySelector('.projects-container')
@@ -152,7 +170,7 @@ window.addEventListener('DOMContentLoaded', function () {
 // display projects
 function displayProjects(projects) {
     let displayProject = projects.map(function (item) {
-    return `
+        return `
         <!-- single item -->
         <div class="project">
             <div class="project-link">
@@ -177,30 +195,30 @@ function displayProjects(projects) {
 function displayButtons() {
 
     // get unique categories
-    const categories = projects.reduce(function(values, item) {
-        if ( !values.includes(item.category) ) {
+    const categories = projects.reduce(function (values, item) {
+        if (!values.includes(item.category)) {
             values.push(item.category)
         }
         return values
     }, ['All'])
     console.log(categories)
-    const categoryBtns = categories.map(function(category) {
+    const categoryBtns = categories.map(function (category) {
         return `<button class="filter-btn" type="button" data-id="${category}">${category}</button>`
     }).join('')
     btnsContainer.innerHTML = categoryBtns
     const filterBtns = document.querySelectorAll('.filter-btn')
 
     // filter items
-    filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
+    filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
             console.log(e.currentTarget.dataset.id)
             const category = e.currentTarget.dataset.id
-            const projectsCategory = projects.filter(function(item) {
-                if ( item.category === category ) {
+            const projectsCategory = projects.filter(function (item) {
+                if (item.category === category) {
                     return item
                 }
             })
-            if ( category === 'All' ) {
+            if (category === 'All') {
                 displayProjects(projects)
             } else {
                 displayProjects(projectsCategory)
